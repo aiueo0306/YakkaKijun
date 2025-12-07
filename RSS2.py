@@ -27,22 +27,22 @@ from browser_utils import click_button_in_order
 from browser_utils import click_button_in_order
 
 # ===== 固定情報（学会サイト） =====
-BASE_URL = "https://www.mhlw.go.jp/stf/newpage_28708.html"
-GAKKAI = "社会保障審議会（医療保険部会）"
+BASE_URL = "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000078916.html"
+GAKKAI = "医療保険が適用される医薬品について"
 
-SELECTOR_TITLE = "table.m-tableFlex tr"
-title_selector = ""
+SELECTOR_TITLE = "div.l-contentMain div.m-grid__col1"
+title_selector = "li"
 title_index = 0
 href_selector = "a"
-href_index = 1
-SELECTOR_DATE = "table.m-tableFlex tr"
-date_selector = ""
+href_index = 0
+SELECTOR_DATE = "div.l-contentMain div.m-grid__col1"
+date_selector = "time"
 date_index = 0
-year_unit = "年"
+year_unit = ""
 month_unit = "月"
 day_unit = "日"
-date_format = f"%Y{year_unit}%m{month_unit}%d{day_unit}"
-date_regex = rf"(\d{{2,4}}){year_unit}(\d{{1,2}}){month_unit}(\d{{1,2}}){day_unit}"
+date_format = f"%Y{month_unit}%d{day_unit}"
+date_regex = rf"(\d{{1,2}}){month_unit}(\d{{1,2}}){day_unit}"
 
 # ===== ポップアップ順序クリック設定 =====
 POPUP_MODE = 0  # 1: 実行 / 0: スキップ
